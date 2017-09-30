@@ -26,3 +26,17 @@ public class Cipher {
 				{"WX",  "Y","Z","N","O","P","Q","R","S","T","U","V","W","X","C","D","E","F","G","H","I","J","K","L","M","A","B"},
 				{"YZ",  "Z","N","O","P","Q","R","S","T","U","V","W","X","Y","B","C","D","E","F","G","H","I","J","K","L","M","A"},
 		};//2d array
+		
+		//create hash map. I use protected so it can be used within the project but not outside it
+	protected static void createCipherMap(HashMap<String, List<Character>> cipherMap) {
+		for(int i=0; i < tableau.length; i++) {
+			String key = tableau[i][0];
+			ArrayList<Character> chars = new ArrayList<>();
+			for(int j=1; j < tableau[i].length; j++) {
+				chars.add(tableau[i][j].charAt(0));
+			}//end inner for
+			cipherMap.put(key, chars);
+		}//end for. Indented for loop will run at quadratic time.O(n^2).
+	}//end createCipherMap
+
+}
