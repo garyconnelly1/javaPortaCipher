@@ -66,3 +66,16 @@ public class Parser {
 			br.close();//close bufferReader
 			bw.close();//close bufferWriter
 		}
+		
+		catch(FileNotFoundException e)
+		{
+			
+		}
+		catch(IOException e)
+		{
+			
+		}
+		
+	}
+
+}
