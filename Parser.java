@@ -16,3 +16,22 @@ public class Parser {
 	{
 		//initialise buffered reader
 		BufferedReader br = null;
+		
+		//try catch statement
+		try
+		{
+			if(location.contains("www. ") || location.contains("http. "))
+			{
+				URL myUrl = new URL(location);
+				//buffer reader
+				br = new BufferedReader(new InputStreamReader(myUrl.openStream()));//To read in the url
+			}//end if
+			else
+			{
+				br = new BufferedReader(new FileReader(location));//To read in the file
+			}//end else
+		}//end try
+		catch (IOException e)
+		{
+			System.out.println("Error: Your file/URL was not found");//If an error occurs while inputting data
+		}//end catch
