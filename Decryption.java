@@ -13,3 +13,17 @@ public class Decryption {
 	
 	//initialise pass position
 	private static int passPosition = 0;
+	
+	public static char myDecrypter(char c, String password)
+	{
+		//password to uppercase
+		password = password.toUpperCase();
+		
+		//to go back to beginning of password
+		if(passPosition == password.length()) {
+			passPosition = 0;
+		}
+		
+		char passCurrent = password.charAt(passPosition);
+		
+		int index = 0;
