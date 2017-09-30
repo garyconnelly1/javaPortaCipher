@@ -46,3 +46,46 @@ public class Decryption {
 		
 		//return the character on the "KEYS" line
 		return Runner.cipherMap.get("KEYS").get(index);
+		
+		/*int unicode = ((int)c - 65); // because A is the 65th character in the unicode table
+		
+		col = (int)password.charAt(q % password.length())/2 + 1;
+		
+		System.out.println(col);
+		//if
+			if(unicode >= 14 && unicode <= 26)
+			{
+				row = ( (unicode - col) + 1) % 13;
+				
+				//inner if
+				if(row == 0)
+				{
+					row = 13;// because I dont want row 13 to plus 1 and equal row 0. 
+				}//end inner if
+				
+				c = (char)(row + 64);
+			}//end if
+		
+		//else if
+			//Dont really understand how this code works but it does. 
+			else if(unicode >= 1 && unicode <= 13)
+			{
+				row = ( (unicode + col) - 1) % 13 + 13;
+				
+				//inner if
+				if(row == 13)
+				{
+					row = 26; 
+				}//end inner if
+				c = (char)(row + 64);
+				
+			}//end else if
+		
+		
+		q++;
+		
+		
+		return c;*/
+	}// end myDecrypter
+
+}//end Decryption
