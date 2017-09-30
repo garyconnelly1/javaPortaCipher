@@ -27,3 +27,22 @@ public class Decryption {
 		char passCurrent = password.charAt(passPosition);
 		
 		int index = 0;
+		
+		for(String key : Runner.cipherMap.keySet()) {
+			//key based operations on hashmap constant time.O(1).
+			if(key.indexOf(passCurrent) != -1 && !key.equals("KEYS")) {
+				List<Character> chars = Runner.cipherMap.get(key);
+				//index of character on the map
+				index = chars.indexOf(c);
+				if(index == -1) {
+					return c;
+				}//end inner if
+				break;
+			}//end if
+		}// encryption done
+		
+		//increment pass position
+		passPosition++;
+		
+		//return the character on the "KEYS" line
+		return Runner.cipherMap.get("KEYS").get(index);
