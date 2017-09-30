@@ -35,3 +35,14 @@ public class Parser {
 		{
 			System.out.println("Error: Your file/URL was not found");//If an error occurs while inputting data
 		}//end catch
+		
+			//return
+		return br;//return what was read in
+	}//end buffered reader
+	
+	//write to file method
+	public static void FileWriter(String location, String password, String fileName)
+	{
+		BufferedReader br = myParser(location);
+		
+		int x;
